@@ -18,7 +18,9 @@ from_addr = '18720977970@163.com'
 #password = input('Password: ')
 password = 'yukunlongjiayou1'
 #to_addr = input('To: ')
-to_addr =['1181281178@qq.com', '1114208388@qq.com']
+to_addr =['1181281178@qq.com', '1114208388@qq.com', '757229511@qq.com', '214155392@qq.com', '857371419@qq.com','1733514239',
+			'1348861187@qq.com', '979554473@qq.com', '1982764150@qq.com','1378744968@qq.com', '1518570749@qq.com', '1754026982@qq.com',
+			'1793015384@qq.com']
 #smtp_server = input('SMTP server: ')
 smtp_server = 'smtp.163.com'
 #msg = MIMEText('<html><body><h1>Hello</h1>'+'<p>send by <a href ="http://www.python.org">Python</a>...</p>'+'</body></html>', 'html', 'utf-8')
