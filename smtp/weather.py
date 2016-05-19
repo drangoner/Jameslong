@@ -24,6 +24,6 @@ class weather:
 
     def getContent(self):
         page = self.getPage()
-        soup = BeautifulSoup(page, "lxml")
+        soup = BeautifulSoup(page, "html5")
         return(soup.select('ul.t'))
 
