@@ -27,7 +27,7 @@ smtp_server = 'smtp.163.com'
 #msg = MIMEText('<html><body><h1>Hello</h1>'+'<p>send by <a href ="http://www.python.org">Python</a>...</p>'+'</body></html>', 'html', 'utf-8')
 msg = MIMEMultipart()
 user = '123456789@123.com'
-msg['From'] = _format_addr('阿尔曼 <%s>' % from_addr)
+msg['From'] = _format_addr('520 <%s>' % from_addr)
 msg['To'] = _format_addr('米拉 <%s>' % to_addr)
 msg['Subject'] = Header('来自神兽的问候……', 'utf-8').encode()
 
