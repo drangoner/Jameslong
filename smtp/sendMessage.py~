@@ -13,33 +13,41 @@ def _format_addr(s):
     name, addr = parseaddr(s)
     return formataddr((Header(name, 'utf-8').encode(), addr))
 
-#from_addr = input('From: ')
-from_addr = '18720977970@163.com'
-#password = input('Password: ')
-password = 'yukunlongjiayou1'
-#to_addr = input('To: ')
-to_addr =['1181281178@qq.com', '1114208388@qq.com', '757229511@qq.com', '214155392@qq.com', '857371419@qq.com','1733514239@qq.com',
-			'1348861187@qq.com', '979554473@qq.com', '1982764150@qq.com','1378744968@qq.com', '1518570749@qq.com', '1754026982@qq.com',
-			'1793015384@qq.com', '3546219@qq.com', '75104172@qq.com', '122712323@qq.com', '137024054@qq.com','736322523@qq.com','205036863@qq.com'
-			]
-#smtp_server = input('SMTP server: ')
-smtp_server = 'smtp.163.com'
-#msg = MIMEText('<html><body><h1>Hello</h1>'+'<p>send by <a href ="http://www.python.org">Python</a>...</p>'+'</body></html>', 'html', 'utf-8')
-msg = MIMEMultipart()
-user = '123456789@123.com'
-msg['From'] = _format_addr('520 <%s>' % from_addr)
-msg['To'] = _format_addr('米拉 <%s>' % to_addr)
-msg['Subject'] = Header('来自神兽的问候……', 'utf-8').encode()
 
+from_addr = '18720977970@163.com'
+
+password = 'yukunlongjiayou1'
+
+to_addr =['1181281178@qq.com','2281582766@qq.com']
+smtp_server = 'smtp.163.com'
+
+msg = MIMEMultipart()
+msg['From'] = _format_addr('南山一颗树 <%s>' % from_addr)
+msg['To'] = _format_addr('Jameslong <%s>' % to_addr)
+msg['Subject'] = Header('Best love …', 'utf-8').encode()
+#NanChang
 url = 'http://www.weather.com.cn/weather/101240101.shtml'
 wea = weather.weather(url)
 html = wea.getContent()
-print(html)
 html = str(html[0])
-msg.attach(MIMEText('<div style="list-style:none;">' + html  +'<h1 style="text-align:center;">祝你愉快！</h1></div>','html','utf-8'))
+msg.attach(MIMEText('<div style="background:url(http://d.hiphotos.baidu.com/zhidao/pic/item/c83d70cf3bc79f3d5b4ecce1bba1cd11738b29b7.jpg)"><h1 style="text-align:center;">Jameslong，南昌天气</h1>' + html  +'<h1 style="text-align:center; font-size:32px;color:purple;padding-top:120px;">Good morning！</h1></div>','html','utf-8'))
+#ChongQing
+url_cq = 'http://www.weather.com.cn/weather/101040100.shtml'
+wea_cq = weather.weather(url_cq)
+html_cq = wea_cq.getContent()
+html_cq = str(html_cq[0])
+
+msg_cq = MIMEMultipart()
+msg_cq['From'] = _format_addr('南山一颗树 <%s>' % from_addr)
+msg_cq['To'] = _format_addr('梦园 <%s>' % to_addr)
+msg_cq['Subject'] = Header('Best love …', 'utf-8').encode()
+print(html_cq)
+msg_cq.attach(MIMEText('<div style="background:url(http://img4q.duitang.com/uploads/item/201505/31/20150531162433_ukKzf.thumb.224_0.jpeg)"><h1 style="text-align:center;">梦园，重庆天气</h1>' + html_cq +'<h1 style="text-align:center; font-size:32px;color:purple;padding-top:120px;">Good morning！</h1></div>','html','utf-8'))
+
 server = smtplib.SMTP(smtp_server, 25)
 server.set_debuglevel(1)
 server.login(from_addr, password)
-server.sendmail(from_addr, to_addr, msg.as_string())
+server.sendmail(from_addr,['1181281178@qq.com'], msg.as_string())
+server.sendmail(from_addr, to_addr, msg_cq.as_string())
 server.quit()
 
