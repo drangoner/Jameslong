@@ -33,7 +33,7 @@ msg_cq['From'] = _format_addr('南山一颗树 <%s>' % from_addr)
 msg_cq['To'] = _format_addr('梦园 <%s>' % to_addr)
 msg_cq['Subject'] = Header('Good night …', 'utf-8').encode()
 
-msg_cq.attach(MIMEText('<div style="background:url(http://d.hiphotos.baidu.com/zhidao/pic/item/c83d70cf3bc79f3d5b4ecce1bba1cd11738b29b7.jpg)"><h1 style="text-align:center;">梦园，Good night!</h1>' +'<p style="font-size:24px;">宁静的夜晚,<br/>美丽的星空！<br/>你到阳台上看天空，<br/>在你的眼前有两颗流星，<br/>一颗叫晚，<br/>一颗叫安。<br/>划落到你的手中，<br/>你接住了吗？<br/></p>'+ '<h1 style="text-align:center; font-size:32px;color:purple;padding-top:320px;">Good night！</h1></div>','html','utf-8'))
+msg_cq.attach(MIMEText('<div style="background:url(http://img3.douban.com/view/note/large/public/p31471582.jpg)"><h1 style="text-align:center;color:#a0a0a0;">梦园，Good night!</h1>' +'<p style="font-size:24px;color:#a0a0a0;">宁静的夜晚,<br/>美丽的星空！<br/>你到阳台上看天空，<br/>在你的眼前有两颗流星，<br/>一颗叫晚，<br/>一颗叫安。<br/>划落到你的手中，<br/>你接住了吗？<br/></p>'+ '<h1 style="text-align:center; font-size:32px;color:#f0f0f0;padding-top:320px;">Good night！</h1></div>','html','utf-8'))
 
 server = smtplib.SMTP(smtp_server, 25)
 server.set_debuglevel(1)
