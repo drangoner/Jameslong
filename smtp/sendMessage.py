@@ -24,7 +24,7 @@ smtp_server = 'smtp.163.com'
 msg = MIMEMultipart()
 msg['From'] = _format_addr('南山一颗树 <%s>' % from_addr)
 msg['To'] = _format_addr('Jameslong <%s>' % to_addr)
-msg['Subject'] = Header('Best love …', 'utf-8').encode()
+msg['Subject'] = Header('I am a robor …', 'utf-8').encode()
 #NanChang
 url = 'http://www.weather.com.cn/weather/101240101.shtml'
 wea = weather.weather(url)
@@ -40,9 +40,9 @@ html_cq = str(html_cq[0])
 msg_cq = MIMEMultipart()
 msg_cq['From'] = _format_addr('南山一颗树 <%s>' % from_addr)
 msg_cq['To'] = _format_addr('梦园 <%s>' % to_addr)
-msg_cq['Subject'] = Header('Best love …', 'utf-8').encode()
+msg_cq['Subject'] = Header('I am a robor …', 'utf-8').encode()
 print(html_cq)
-msg_cq.attach(MIMEText('<div style="background:url(http://img4q.duitang.com/uploads/item/201505/31/20150531162433_ukKzf.thumb.224_0.jpeg)"><h1 style="text-align:center;">梦园，重庆天气</h1>' + html_cq +'<h1 style="text-align:center; font-size:32px;color:purple;padding-top:120px;">Good morning！</h1></div>','html','utf-8'))
+msg_cq.attach(MIMEText('<div style="background:url(http://p3.gexing.com/shaitu/20130213/1654/511b54ce98757.jpg)"><h1 style="text-align:center;">梦园，重庆天气</h1>' + html_cq +'<h1 style="text-align:center; font-size:32px;color:purple;padding-top:120px;">Good morning！</h1></div>','html','utf-8'))
 
 server = smtplib.SMTP(smtp_server, 25)
 server.set_debuglevel(1)
