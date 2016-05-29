@@ -32,13 +32,14 @@ msg_cq = MIMEMultipart()
 msg_cq['From'] = _format_addr('南山一颗树 <%s>' % from_addr)
 msg_cq['To'] = _format_addr('梦园 <%s>' % to_addr)
 msg_cq['Subject'] = Header('Good night …', 'utf-8').encode()
-
-msg_cq.attach(MIMEText('<div style="background:url(http://img2.3lian.com/2014/f5/73/d/22.jpg );background-size:100% 100%; background-repeat: no-repeat;"><audio src="http://other.web.rh03.sycdn.kuwo.cn/a0d98cfeded99c15838236564abf6810/57499b3d/resource/a2/43/31/729150449.aac" controls="controls" autoplay="autoplay"><h1 style="text-align:center;color:#a0a0a0;">梦园，Good night!</h1>' +'<p style="font-size:24px;color:#a0a0a0;height-light:32px;">啦啦啦,<br/>群山逶迤 两江回环<br/>巍巍学府 屹立西南<br/>自强不息 历创业之维艰<br/>精思睿智 穷学术之浩瀚<br/>博学笃行 育时代之英才<br/>日新月异 志在峰巅<br/>博学笃行 育时代之英才<br/>继往开来 吾辈当先<br/>扬西政精神 垂久而传远</p>'+ '<h1 style="text-align:center; font-size:32px;color:#f0f0f0;padding-top:320px;">Good night！</h1></div>','html','utf-8'))
+name = time.localtime()
+full_name = './music/' + str(name[0]) + '-' + str(name[1]) + '-' + str(name[2]) + '.mp3'
+msg_cq.attach(MIMEText('<div style="background:url(http://img2.3lian.com/2014/f5/73/d/22.jpg );background-size:100% 100%; background-repeat: no-repeat;"><audio src="' + full_name+'" controls="controls" autoplay="autoplay"><h1 style="text-align:center;color:#a0a0a0;">梦园，Good night!</h1>' +'<p style="font-size:24px;color:#a0a0a0;height-light:32px;">啦啦啦,<br/>群山逶迤 两江回环<br/>巍巍学府 屹立西南<br/>自强不息 历创业之维艰<br/>精思睿智 穷学术之浩瀚<br/>博学笃行 育时代之英才<br/>日新月异 志在峰巅<br/>博学笃行 育时代之英才<br/>继往开来 吾辈当先<br/>扬西政精神 垂久而传远</p>'+ '<h1 style="text-align:center; font-size:32px;color:#f0f0f0;padding-top:320px;">Good night！</h1></div>','html','utf-8'))
 
 server = smtplib.SMTP(smtp_server, 25)
 server.set_debuglevel(1)
 server.login(from_addr, password)
 server.sendmail(from_addr,['1181281178@qq.com'], msg.as_string())
-server.sendmail(from_addr, to_addr, msg_cq.as_string())
+server.sendmail(from_addr,['1181281178@qq.com'], msg_cq.as_string())
 server.quit()
 
