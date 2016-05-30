@@ -11,5 +11,5 @@ class music:
         name = time.localtime()
         full_name = '/var/www/friends/music/'+str(name[0])+'-'+str(name[1])+'-'+str(name[2])+'.mp3'
         urllib.request.urlretrieve(self.url,full_name)
-mu = music('http://218.197.116.216/m10.music.126.net/20160529131813/7de3df89d9f6287bc04945fe43ebbde2/ymusic/9fa6/6e8e/2605/2db7117e771988dd3fc816e634387c51.mp3?wshc_tag=0&wsts_tag=574a75b9&wsid_tag=decc0106&wsiphost=ipdbm')
+mu = music('http://218.197.116.216/m10.music.126.net/20160530170357/2d97d1ecd1fdeb3f37c3a6becb138609/ymusic/1c6e/2061/9d1b/5ad16b1b5fff0f55c95a6fc0ef873207.mp3?wshc_tag=0&wsts_tag=574bfc22&wsid_tag=decc0106&wsiphost=ipdbm')
 mu.download()
