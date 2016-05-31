@@ -21,7 +21,7 @@ to_addr =['1181281178@qq.com','2281582766@qq.com']
 smtp_server = 'smtp.163.com'
 
 msg = MIMEMultipart()
-msg['From'] = _format_addr('小园子 <%s>' % from_addr[0])
+msg['From'] = _format_addr('小园子<%s>' % from_addr)
 msg['To'] = _format_addr('Jameslong <%s>' % to_addr[0])
 msg['Subject'] = Header('Good night …', 'utf-8').encode()
 
@@ -29,7 +29,7 @@ msg.attach(MIMEText('<div style="background:url(http://d.hiphotos.baidu.com/zhid
 
 
 msg_cq = MIMEMultipart()
-msg_cq['From'] = _format_addr('南山一颗树 <%s>' % from_addr[0])
+msg_cq['From'] = _format_addr('小园子:)%s' % from_addr[0])
 msg_cq['To'] = _format_addr('梦园 <%s>' % to_addr[1])
 msg_cq['Subject'] = Header('Good night …', 'utf-8').encode()
 name = time.localtime()
