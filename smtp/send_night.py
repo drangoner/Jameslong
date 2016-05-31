@@ -42,6 +42,6 @@ server = smtplib.SMTP(smtp_server, 25)
 server.set_debuglevel(1)
 server.login(from_addr, password)
 server.sendmail(from_addr,['1181281178@qq.com'], msg.as_string())
-server.sendmail(from_addr,['1181281178@qq.com'], msg_cq.as_string())
+server.sendmail(from_addr,to_addr, msg_cq.as_string())
 server.quit()
 
