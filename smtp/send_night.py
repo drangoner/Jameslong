@@ -22,15 +22,15 @@ smtp_server = 'smtp.163.com'
 
 msg = MIMEMultipart()
 msg['From'] = _format_addr('小园子<%s>' % from_addr)
-msg['To'] = _format_addr('Jameslong <%s>' % to_addr[0])
+msg['To'] = _format_addr('Jameslong <%s>' % to_addr)
 msg['Subject'] = Header('Good night …', 'utf-8').encode()
 
 msg.attach(MIMEText('<div style="background:url(http://d.hiphotos.baidu.com/zhidao/pic/item/c83d70cf3bc79f3d5b4ecce1bba1cd11738b29b7.jpg)"><h1 style="text-align:center;">Jameslong，Good night!</h1>' +'<p>因为有你，生活变得更加精彩！<br/>感谢你今天的存在！<br/>你的美梦即将到来！</p>'+ '<h1 style="text-align:center; font-size:32px;color:purple;padding-top:120px;">Good night！</h1></div>','html','utf-8'))
 
 
 msg_cq = MIMEMultipart()
-msg_cq['From'] = _format_addr('小园子:)%s' % from_addr[0])
-msg_cq['To'] = _format_addr('梦园 <%s>' % to_addr[1])
+msg_cq['From'] = _format_addr('小园子:)<%s>' % from_addr)
+msg_cq['To'] = _format_addr('梦园 <%s>' % to_addr)
 msg_cq['Subject'] = Header('Good night …', 'utf-8').encode()
 name = time.localtime()
 full_name =str(name[0]) + '-' + str(name[1]) + '-' + str(name[2]) + '.mp3'
