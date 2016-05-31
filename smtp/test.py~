@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Firefox()
-driver.get("http://y.qq.com/#type=taoge&id=1717124173")
+driver.get("http://news.sina.com.cn/c/2013-07-11/175827642839.shtml")
 
 print(driver.find_element_by_id('lrc_content').text)
 driver.quit()

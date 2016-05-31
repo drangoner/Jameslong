@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Firefox()
-driver.get("http://y.qq.com/#type=song&mid=001nWoME0kaG55&tpl=yqq_song_detail")
-
-print(driver.find_element_by_id('lrc_content').text)
+driver.get("http://www.kuwo.cn/yinyue/7105200?catalog=yueku2016")
+print(driver.find_element_by_id('lrcContent').text)
 driver.quit()

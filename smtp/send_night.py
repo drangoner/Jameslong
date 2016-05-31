@@ -34,13 +34,14 @@ msg_cq['To'] = _format_addr('梦园 <%s>' % to_addr)
 msg_cq['Subject'] = Header('Good night …', 'utf-8').encode()
 name = time.localtime()
 full_name =str(name[0]) + '-' + str(name[1]) + '-' + str(name[2]) + '.mp3'
-lrc = '<div style="font-size:24px;color:#a0a0a0;height-light:32px;">无数夜睌&nbsp;我们看影碟<br>最爱&nbsp;喜剧&nbsp;内愉快结局<br>无数白昼&nbsp;午饭送恋曲<br>我最懂得知足&nbsp;还有点想哭<br><br>若我病了&nbsp;你递上稀粥<br>揭揭书逐字逐句细读<br>若我极困倦&nbsp;你奉上祝福<br>世界中万大事陪我克服<br>无人像你&nbsp;多么上心<br>给你一百分&nbsp;难得有情人<br>谁明白世间一千亿个可能<br>给我找到一个好人<br>感到极荣幸与相当有运<br>无人像你&nbsp;多么的上心<br>所以别离后&nbsp;周遭也陆沉<br>情人若要走一千亿个可能<br>真相不知怎去追寻<br>一向极愚笨我不懂发问<br><br>极戏剧性&nbsp;快乐却短促<br>美满生活并没有继续<br>或注定结局&nbsp;我没有这福<br>欠你的督促&nbsp;自由太孤独<br>无人像你&nbsp;多么上心<br>给你一百分&nbsp;难得有情人<br>谁明白世间一千亿个可能<br>给我找到一个好人<br>感到极荣幸与相当有运<br>无人像你&nbsp;多么的上心<br><br>所以别离后&nbsp;周遭也陆沉<br>情人若要走一千亿个可能<br>真相不知怎去追寻<br>一向极愚笨我不懂发问<br><br>无人像你&nbsp;多么的上心<br>所以别离后&nbsp;周遭也陆沉<br>情人若要走一千亿个可能<br>真相不知怎去追寻<br>一向极愚笨我不懂发问<br><br></div>'
+style="font-size:24px;color:#a0a0a0;height-light:32px;"
+lrc = "<br>I know so many places in the world<br>世界是如此之大<br>I follow the sun in my silver plane<br>在银白色飞机上追随着阳光<br>Universal traveler<br>去做个环球旅行者吧<br>Universal traveler<br>环游世界的旅行者<br>Universal traveler<br>环游世界的旅行者<br>Universal traveler<br>环游世界的旅行者<br>If you have a look<br>如果你也期待<br>Outside on the sea<br>深海外<br>Everything is white<br>所有的纯白<br>It's so wonderful<br>那是多美妙的天堂<br>Universal traveler<br>去做个环球旅行者吧<br>Universal traveler<br>环游世界的旅行者<br>Universal traveler<br>环游世界的旅行者<br>Universal traveler<br>环游世界的旅行者<br><br>So far  so far<br>一直一直<br>So far away<br>那么远<br><br>I met so many<br>我曾遇到过许多<br>People in my life<br>生命中的路人<br>I've got many friends<br>我也曾得到许多<br>Who can care for me<br>在乎我的朋友<br>Universal traveler<br>去做个环球旅行者吧<br>Universal traveler<br>环游世界的旅行者<br>Universal traveler<br>环游世界的旅行者<br>Universal traveler<br>环游世界的旅行者<br><br>Just feel everywhere at home<br>家的感觉无处不在<br>Tomorrow<br>当旭日再次东升<br>Is a brand new day<br>又标识了新的一天<br>Let us go somewhere else<br>勇敢去闯荡世界吧<br>Universal Traveler<br>做个环球旅行者<br>Universal traveler<br>环游世界的旅行者<br>Universal traveler<br>环游世界的旅行者<br>Universal traveler<br>环游世界的旅行者<br><br>So far  so far<br>一直一直<br>So far away<br>那么远<br></div>"
 msg_cq.attach(MIMEText('<div style="background:url(http://img2.3lian.com/2014/f5/73/d/22.jpg );background-size:100% 100%; background-repeat: no-repeat;"><audio src="http://yukunlong.com:8080/music/' + full_name +'" controls="controls" autoplay="autoplay"><h1 style="text-align:center;color:#a0a0a0;">梦园，Good night!</h1>' +lrc+ '<h1 style="text-align:center; font-size:32px;color:#f0f0f0;padding-top:320px;">Good night！</h1></div>','html','utf-8'))
 
 server = smtplib.SMTP(smtp_server, 25)
 server.set_debuglevel(1)
 server.login(from_addr, password)
 server.sendmail(from_addr,['1181281178@qq.com'], msg.as_string())
-server.sendmail(from_addr,to_addr, msg_cq.as_string())
+server.sendmail(from_addr,['1181281178@qq.com'], msg_cq.as_string())
 server.quit()
 
