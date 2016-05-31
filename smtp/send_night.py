@@ -29,7 +29,7 @@ msg.attach(MIMEText('<div style="background:url(http://d.hiphotos.baidu.com/zhid
 
 
 msg_cq = MIMEMultipart()
-msg_cq['From'] = _format_addr('小园子:)<%s>' % from_addr)
+msg_cq['From'] = _format_addr('小园子<%s>' % from_addr)
 msg_cq['To'] = _format_addr('梦园 <%s>' % to_addr)
 msg_cq['Subject'] = Header('Good night …', 'utf-8').encode()
 name = time.localtime()
