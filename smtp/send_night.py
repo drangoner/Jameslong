@@ -18,11 +18,12 @@ from_addr = '18720977970@163.com'
 password = 'yukunlongjiayou1'
 
 to_addr =['1181281178@qq.com','2281582766@qq.com']
+to_addr2 =['1181281178@qq.com','498538617@qq.com']
 smtp_server = 'smtp.163.com'
 
 msg = MIMEMultipart()
 msg['From'] = _format_addr('Jameslong<%s>' % from_addr)
-msg['To'] = _format_addr('小鱼 <%s>' % to_addr)
+msg['To'] = _format_addr('小鱼 <%s>' % to_addr2)
 msg['Subject'] = Header('Good night …', 'utf-8').encode()
 name = time.localtime()
 full_name2 = str(name[0]) + '-' + str(name[1]) + '-' + str(name[2]) + '2.mp3'
