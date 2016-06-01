@@ -27,7 +27,7 @@ msg['Subject'] = Header('Good night …', 'utf-8').encode()
 name = time.localtime()
 full_name2 = str(name[0]) + '-' + str(name[1]) + '-' + str(name[2]) + '2.mp3'
 lrc = "<div style='font-size:24px;color:#a0a0a0;height-light:32px;'><br>每当我听见忧郁的乐章<br>勾起回忆的伤<br>每当我看见白色的月光<br>想起你的脸庞<br>明知不该去想 不能去想<br>偏又想到迷惘<br>是谁让我心酸 谁让我牵挂<br>是你啊<br>我知道那些不该说的话<br>让你负气流浪<br>想知道多年漂浮的时光<br>是否你也想家<br>如果当时吻你 当时抱你<br>也许结局难讲<br>我那么多遗憾 那么多期盼<br>你知道吗<br>我爱你<br>是多么清楚 多么坚固的信仰<br>我爱你<br>是多么温暖 多么勇敢的力量<br>我不管心多伤 不管爱多慌<br>不管别人怎么想<br>爱是一种信仰<br>把我 带到你的身旁<br>我知道那些不该说的话<br>让你负气流浪<br>想知道多年漂浮的时光<br>是否你也想家<br>如果当时吻你 当时抱你<br>也许结局难讲<br>我那么多遗憾 那么多期盼<br>你知道吗<br>我爱你<br>是多么清楚 多么坚固的信仰<br>我爱你<br>是多么温暖 多么勇敢的力量<br>我不管心多伤 不管爱多慌<br>不管别人怎么想<br>爱是一种信仰<br>把我 带到你的身旁<br>我爱你<br>是忠于自己 忠于爱情的信仰<br>我爱你<br>是来自灵魂 来自生命的力量<br>在遥远的地方<br>你是否一样 听见我的呼喊<br>爱是一种信仰<br>把我 带到你的身旁<br>爱是一种信仰<br>把你 带回我的身旁<br></div>"
-msg.attach(MIMEText('<div style="background:url(http://img3.3lian.com/2014/c1/75/d/55.jpg );background-size:100% 100%; background-repeat: no-repeat;"><audio src="http://yukunlong.com:8080/music/' + full_name2 +'" controls="controls" autoplay="autoplay"><h1 style="text-align:center;color:#a0a0a0;">梦园，Good night!</h1>' +lrc+ '<h1 style="text-align:center; font-size:32px;color:#f0f0f0;padding-top:320px;">六一快乐！</h1></div>','html','utf-8'))
+msg.attach(MIMEText('<div style="background:url(http://img3.3lian.com/2014/c1/75/d/55.jpg );background-size:100% 100%; background-repeat: no-repeat;"><audio src="http://yukunlong.com:8080/music/' + full_name2 +'" controls="controls" autoplay="autoplay"><h1 style="text-align:center;color:#a0a0a0;">小鱼，Good night!</h1>' +lrc+ '<h1 style="text-align:center; font-size:32px;color:#f0f0f0;padding-top:320px;">六一快乐！</h1></div>','html','utf-8'))
 
 
 msg_cq = MIMEMultipart()
@@ -44,6 +44,6 @@ server = smtplib.SMTP(smtp_server, 25)
 server.set_debuglevel(1)
 server.login(from_addr, password)
 server.sendmail(from_addr,['1181281178@qq.com'], msg.as_string())
-server.sendmail(from_addr,to_addr, msg_cq.as_string())
+#server.sendmail(from_addr,to_addr, msg_cq.as_string())
 server.quit()
 
