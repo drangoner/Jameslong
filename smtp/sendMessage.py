@@ -23,8 +23,8 @@ to_addr =['1181281178@qq.com','2281582766@qq.com']
 smtp_server = 'smtp.163.com'
 
 msg = MIMEMultipart()
-msg['From'] = _format_addr('南山一颗树 <%s>' % from_addr)
-msg['To'] = _format_addr('Jameslong <%s>' % to_addr)
+msg['From'] = _format_addr('Jameslong <%s>' % from_addr)
+msg['To'] = _format_addr('小鱼 <%s>' % to_addr)
 msg['Subject'] = Header('I am a robor …', 'utf-8').encode()
 #NanChang
 url = 'http://www.weather.com.cn/weather/101240101.shtml'
@@ -47,7 +47,7 @@ server = smtplib.SMTP(smtp_server, 25)
 server.set_debuglevel(1)
 server.login(from_addr, password)
 msg_cq.attach(MIMEText('<div style="background:url(http://img5q.duitang.com/uploads/blog/201410/05/20141005191614_iccht.jpeg);background-size:100% auto; background-repeat: y-repeat;"><h1 style="text-align:center;">梦园，重庆天气</h1>' + html_cq + '<h1 style="text-align:center; font-size:32px;padding-top:120px;">Good morning！</h1></div>','html', 'utf-8'))
-server.sendmail(from_addr,['1181281178@qq.com'], msg.as_string())
+server.sendmail(from_addr,['1181281178@qq.com','498538617@qq.com'], msg.as_string())
 server.sendmail(from_addr, to_addr, msg_cq.as_string())
 
 server.quit()
